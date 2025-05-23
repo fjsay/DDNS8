@@ -143,10 +143,10 @@ update_ip() {
     if [ "$CURRENT_IP" != "$last_ip" ]; then
         # 构建更新URL（根据版本设置记录类型）
         if [ "$version" -eq 4 ]; then
-            UPDATE_URL="https://9517.eu.org/api/ddnsapi.php?token=${TOKEN}&domain=${DOMAIN}&addr=${CURRENT_IP}"
+            UPDATE_URL="http://9517.eu.org/api/ddnsapi.php?token=${TOKEN}&domain=${DOMAIN}&addr=${CURRENT_IP}"
             CONF_IP="LAST_IPV4"
         else
-            UPDATE_URL="https://9517.eu.org/api/ddnsapi.php?token=${TOKEN}&domain=${DOMAIN}&addr=${CURRENT_IP}"
+            UPDATE_URL="http://9517.eu.org/api/ddnsapi.php?token=${TOKEN}&domain=${DOMAIN}&addr=${CURRENT_IP}"
             CONF_IP="LAST_IPV6"
         fi
         
