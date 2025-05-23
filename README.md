@@ -1,7 +1,20 @@
 # 🛰️ Public Domain DDNS Script
 
-一个轻量级、纯 Shell 的 DDNS 动态域名更新脚本，专为 [YouDDNS](https://9517.eu.org/) 平台设计，无需 Python 或其他依赖，适用于任意 Linux 系统。
+一个轻量级、纯 Shell 的 DDNS 动态域名更新脚本，专为 [YouDDNS](https://9517.eu.org/) 平台设计，无需 Python 或其他依赖，适用于任意 Linux/Windows 系统。
 
+
+---
+
+# Windows
+---
+在public-domain-ddns-script/windows有两个文件夹，根据需求选择性下载（一个是v6一个是v4），然后完善其中的内容即可，要完善的内容只有一行。完善后直接运行即可。可根据需求添加到计划任务。
+```bash
+curl -s "https://9517.eu.org/api/ddnsapi.php?token=你的API令牌&domain=你的域名"
+```
+---
+---
+
+# Linux(飞牛，群晖，绿联，Ubuntu，Debian，CentOS，armbian，威联通，极空间等)
 ---
 
 ## ✅ 一键安装
