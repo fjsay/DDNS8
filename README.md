@@ -75,7 +75,7 @@ sudo ./uninstall.sh
 
 ## 💬 问题反馈
 
-欢迎在 Gitee 提 Issue 交流问题和建议：https://gitee.com/doutuiya/ddns/issues
+欢迎在 Gitee 提 Issue 交流问题和建议：https://github.com/fjsay/YouDDNS-/issues
 
 ---
 
