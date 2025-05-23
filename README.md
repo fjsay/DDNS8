@@ -28,6 +28,7 @@ sudo vim /etc/ddns/config.conf
 ```bash
 DOMAIN=你的域名
 TOKEN=API令牌
+v46=你要使用ipv4还是ipv6，填写数字即可
 ```
 
 这些值来自你在 https://9517.eu.org/user/profile.php 页面设置生成的参数。
