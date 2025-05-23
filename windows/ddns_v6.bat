@@ -2,44 +2,44 @@
 setlocal enabledelayedexpansion
 
 :start
-echo ÕýÔÚ¸üÐÂDDNS¼ÇÂ¼... [%date% %time%]
+echo æ­£åœ¨æ›´æ–°DDNSè®°å½•... [%date% %time%]
 
-:: »ñÈ¡Íø¿¨IPv6µØÖ·£¨½ö±£Áô24¿ªÍ·µÄ¹«ÍøµØÖ·£©
-echo »ñÈ¡24¿ªÍ·µÄ¹«ÍøIPv6µØÖ·...
+:: èŽ·å–ç½‘å¡IPv6åœ°å€ï¼ˆä»…ä¿ç•™24å¼€å¤´çš„å…¬ç½‘åœ°å€ï¼‰
+echo èŽ·å–24å¼€å¤´çš„å…¬ç½‘IPv6åœ°å€...
 set "ip="
 
-:: Ê¹ÓÃipconfigÃüÁî»ñÈ¡ËùÓÐÍøÂçÅäÖÃÐÅÏ¢
+:: ä½¿ç”¨ipconfigå‘½ä»¤èŽ·å–æ‰€æœ‰ç½‘ç»œé…ç½®ä¿¡æ¯
 for /f "tokens=*" %%a in ('ipconfig ^| findstr /i "IPv6 Address"') do (
     set "line=%%a"
     
-    :: ÌáÈ¡ÍêÕûIPv6µØÖ·£¨°üÀ¨ËùÓÐÃ°ºÅºóµÄ²¿·Ö£©
+    :: æå–å®Œæ•´IPv6åœ°å€ï¼ˆåŒ…æ‹¬æ‰€æœ‰å†’å·åŽçš„éƒ¨åˆ†ï¼‰
     for /f "tokens=1* delims=:" %%b in ("!line!") do (
         set "ipv6_candidate=%%c"
-        set "ipv6_candidate=!ipv6_candidate: =!"  :: È¥³ýÇ°µ¼¿Õ¸ñ
+        set "ipv6_candidate=!ipv6_candidate: =!"  :: åŽ»é™¤å‰å¯¼ç©ºæ ¼
         
-        :: ½ö±£ÁôÒÔ24¿ªÍ·ÇÒ·ÇÁ´Â·±¾µØµÄµØÖ·
+        :: ä»…ä¿ç•™ä»¥24å¼€å¤´ä¸”éžé“¾è·¯æœ¬åœ°çš„åœ°å€
         echo !ipv6_candidate! | findstr /i "^24" | findstr /v /i "fe80" >nul
         if not errorlevel 1 (
             set "ip=!ipv6_candidate!"
-            echo [!date! !time!] ÕÒµ½ÓÐÐ§IPv6µØÖ·: !ip!
-            goto :found_ip  // ÕÒµ½µÚÒ»¸öµØÖ·ºóÁ¢¼´ÍË³öÑ­»·
+            echo [!date! !time!] æ‰¾åˆ°æœ‰æ•ˆIPv6åœ°å€: !ip!
+            goto :found_ip  // æ‰¾åˆ°ç¬¬ä¸€ä¸ªåœ°å€åŽç«‹å³é€€å‡ºå¾ªçŽ¯
         )
     )
 )
 
 :found_ip
-:: ¼ì²éÊÇ·ñÕÒµ½·ûºÏÌõ¼þµÄIPv6µØÖ·
+:: æ£€æŸ¥æ˜¯å¦æ‰¾åˆ°ç¬¦åˆæ¡ä»¶çš„IPv6åœ°å€
 if "%ip%"=="" (
-    echo [!date! !time!] Î´ÕÒµ½24¿ªÍ·µÄ¹«ÍøIPv6µØÖ·£¬Ìø¹ý¸üÐÂ
+    echo [!date! !time!] æœªæ‰¾åˆ°24å¼€å¤´çš„å…¬ç½‘IPv6åœ°å€ï¼Œè·³è¿‡æ›´æ–°
 ) else (
-    echo [!date! !time!] Ê¹ÓÃIPv6µØÖ·: !ip!
+    echo [!date! !time!] ä½¿ç”¨IPv6åœ°å€: !ip!
     
-    :: ·¢ËÍDDNS¸üÐÂÇëÇó£¨Ð¯´øIPv6µØÖ·£©
-    curl -s "https://9517.eu.org/api/ddnsapi.php?token=ÄãµÄAPIÁîÅÆ&domain=ÄãµÄÓòÃû&ip=!ip!"
+    :: å‘é€DDNSæ›´æ–°è¯·æ±‚ï¼ˆæºå¸¦IPv6åœ°å€ï¼‰
+    curl -s "http://9517.eu.org/api/ddnsapi.php?token=ä½ çš„APIä»¤ç‰Œ&domain=ä½ çš„åŸŸå&ip=!ip!"
     
-    echo ·þÎñÆ÷ÏìÓ¦ÒÑ½ÓÊÕ
+    echo æœåŠ¡å™¨å“åº”å·²æŽ¥æ”¶
 )
 
-echo ¸üÐÂÍê³É£¡ÏÂÒ»´Î¸üÐÂ½«ÔÚ5·ÖÖÓºó½øÐÐ...
+echo æ›´æ–°å®Œæˆï¼ä¸‹ä¸€æ¬¡æ›´æ–°å°†åœ¨5åˆ†é’ŸåŽè¿›è¡Œ...
 timeout /t 300 /nobreak >nul
 goto start
