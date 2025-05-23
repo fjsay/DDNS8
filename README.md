@@ -7,8 +7,8 @@
 ## ✅ 一键安装
 
 ```bash
-git clone https://gitee.com/doutuiya/public-domain-ddns-script.git
-cd public-domain-ddns-script
+git clone https://github.com/fjsay/YouDDNS.git
+cd YouDDNS
 chmod +x install.sh
 sudo ./install.sh
 ```
@@ -57,7 +57,7 @@ ddns
 如果你不再使用 DDNS 功能，可以使用以下命令进行卸载：
 
 ```bash
-cd public-domain-ddns-script
+cd YouDDNS
 chmod +x uninstall.sh
 sudo ./uninstall.sh
 ```
