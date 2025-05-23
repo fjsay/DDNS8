@@ -2,11 +2,11 @@
 setlocal enabledelayedexpansion
 
 :start
-echo ÕýÔÚ¸üÐÂDDNS¼ÇÂ¼... [%date% %time%]
+echo æ­£åœ¨æ›´æ–°DDNSè®°å½•... [%date% %time%]
 
-curl -s "https://9517.eu.org/api/ddnsapi.php?token=ÄãµÄAPIÁîÅÆ&domain=ÄãµÄÓòÃû"
+curl -s "http://9517.eu.org/api/ddnsapi.php?token=ä½ çš„APIä»¤ç‰Œ&domain=ä½ çš„åŸŸå"
 
-echo ¸üÐÂÍê³É£¡ÏÂÒ»´Î¸üÐÂ½«ÔÚ5·ÖÖÓºó½øÐÐ...
+echo æ›´æ–°å®Œæˆï¼ä¸‹ä¸€æ¬¡æ›´æ–°å°†åœ¨5åˆ†é’ŸåŽè¿›è¡Œ...
 timeout /t 300 /nobreak >nul
 
 goto start
