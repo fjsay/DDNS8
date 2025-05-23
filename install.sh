@@ -23,6 +23,7 @@ if [ ! -f "$CONFIG_FILE" ]; then
     # 获取用户输入
     read -p "请输入您的域名 (例如: example.com): " DOMAIN
     read -p "请输入您的 API 令牌: " TOKEN
+    read -p "使用ipv4还是ipv6，请填写4或6（只要数字就行） " v46
     
     # 验证输入
     if [ -z "$DOMAIN" ] || [ -z "$TOKEN" ]; then
@@ -36,6 +37,8 @@ echo "# 域名" | sudo tee -a "$CONFIG_FILE" >/dev/null  # 使用 -a 追加而�
 echo "DOMAIN=$DOMAIN" | sudo tee -a "$CONFIG_FILE" >/dev/null
 echo "# API令牌" | sudo tee -a "$CONFIG_FILE" >/dev/null  # 使用 -a 追加而非覆盖
 echo "TOKEN=$TOKEN" | sudo tee -a "$CONFIG_FILE" >/dev/null
+echo "# v6v4？" | sudo tee -a "$CONFIG_FILE" >/dev/null  # 使用 -a 追加而非覆盖
+echo "v46=$v46" | sudo tee -a "$CONFIG_FILE" >/dev/null
     
     # 设置安全权限
     sudo chmod 777 "$CONFIG_FILE"
