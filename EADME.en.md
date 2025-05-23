@@ -10,7 +10,7 @@ A lightweight, pure Shell DDNS (Dynamic Domain Name System) dynamic domain name 
 ---  
 In the `public-domain-ddns-script/windows` directory, there are two folders. Download the appropriate one according to your needs (one for v6 and one for v4), then complete the content inside. Only one line needs to be completed. After completion, run it directly. You can add it to the scheduled tasks as needed.  
 ```bash  
-curl -s "http://gao125625.7003lxkfe.guaixing.cn/api/ddnsapi.php?token=Your API token&domain=Your domain"  
+curl -s "https://9517.eu.org/api/ddnsapi.php?token=Your API token&domain=Your domain"  
 ```  
 ---  
 
