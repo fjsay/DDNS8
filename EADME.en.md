@@ -30,7 +30,8 @@ Modify the content with your own parameters:
 
 ```bash  
 DOMAIN=your-domain.com  
-TOKEN=your-api-token  
+TOKEN=your-api-token
+v46=the IP version you want to use (enter 4 or 6)  
 ```  
 
 These values are generated in your profile settings on the [YouDDNS platform](https://9517.eu.org/user/profile.php).  
