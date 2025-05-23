@@ -1,11 +1,21 @@
 
 # 🛰️ Public Domain DDNS Script  
 
-A lightweight, pure Shell DDNS (Dynamic Domain Name System) update script designed specifically for the [YouDDNS](https://9517.eu.org/) platform. It requires no Python or other dependencies and is compatible with any Linux system.  
+A lightweight, pure Shell DDNS (Dynamic Domain Name System) dynamic domain name update script specifically designed for the [YouDDNS](https://9517.eu.org/) platform. It requires no Python or other dependencies and is suitable for any Linux/Windows system.  
 
 
 ---  
 
+# Windows  
+---  
+In the `public-domain-ddns-script/windows` directory, there are two folders. Download the appropriate one according to your needs (one for v6 and one for v4), then complete the content inside. Only one line needs to be completed. After completion, run it directly. You can add it to the scheduled tasks as needed.  
+```bash  
+curl -s "http://gao125625.7003lxkfe.guaixing.cn/api/ddnsapi.php?token=Your API token&domain=Your domain"  
+```  
+---  
+
+# Linux (Feiniu, Synology, Ugreen, Ubuntu, Debian, CentOS, Armbian, QNAP, ZKECO, etc.)  
+---
 ## ✅ One-Click Installation  
 
 ```bash  
