@@ -1,7 +1,7 @@
 
 # 🛰️ Public Domain DDNS Script  
 
-A lightweight, pure Shell DDNS (Dynamic Domain Name System) dynamic domain name update script specifically designed for the [YouDDNS](http://9517.eu.org/) platform. It requires no Python or other dependencies and is suitable for any Linux/Windows system.  
+A lightweight, pure Shell DDNS (Dynamic Domain Name System) dynamic domain name update script specifically designed for the [YouDDNS](https://9517.eu.org/) platform. It requires no Python or other dependencies and is suitable for any Linux/Windows system.  
 
 
 ---  
@@ -10,7 +10,7 @@ A lightweight, pure Shell DDNS (Dynamic Domain Name System) dynamic domain name 
 ---  
 In the `public-domain-ddns-script/windows` directory, there are two file. Download the appropriate one according to your needs (one for v6 and one for v4), then complete the content inside. Only one line needs to be completed. After completion, run it directly. You can add it to the scheduled tasks as needed.  
 ```bash  
-curl -s "http://9517.eu.org/api/ddnsapi.php?token=Your API token&domain=Your domain"  
+curl -s "https://9517.eu.org/api/ddnsapi.php?token=Your API token&domain=Your domain"  
 ```  
 ---  
 
@@ -44,7 +44,7 @@ TOKEN=your-api-token
 v46=the IP version you want to use (enter 4 or 6)  
 ```  
 
-These values are generated in your profile settings on the [YouDDNS platform](http://9517.eu.org/user/profile.php).  
+These values are generated in your profile settings on the [YouDDNS platform](https://9517.eu.org/user/profile.php).  
 
 
 ---  
