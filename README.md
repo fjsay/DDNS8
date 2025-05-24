@@ -1,6 +1,6 @@
 # 🛰️ Public Domain DDNS Script
 
-一个轻量级、纯 Shell 的 DDNS 动态域名更新脚本，专为 [YouDDNS](https://9517.eu.org/) 平台设计，无需 Python 或其他依赖，适用于任意 Linux/Windows 系统。
+一个轻量级、纯 Shell 的 DDNS 动态域名更新脚本，专为 [YouDDNS](http://9517.eu.org/) 平台设计，无需 Python 或其他依赖，适用于任意 Linux/Windows 系统。
 
 
 ---
@@ -44,7 +44,7 @@ TOKEN=API令牌
 v46=你要使用ipv4还是ipv6，填写数字即可
 ```
 
-这些值来自你在 https://9517.eu.org/user/profile.php 页面设置生成的参数。
+这些值来自你在 http://9517.eu.org/user/profile.php 页面设置生成的参数。
 
 ---
 
