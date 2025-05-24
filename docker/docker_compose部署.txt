@@ -11,3 +11,4 @@ services:
    - 8.8.8.8    # Google 公共 DNS
    - 1.1.1.1    # Cloudflare 公共 DNS
   restart: always
+  network_mode: host
