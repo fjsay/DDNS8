@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+ youddns:
+  image: fjsay/ddns:latest
+  environment:
+   - DOMAIN=你的API域名
+   - TOKEN=你的API令牌
+   - API_URL=http://9517.eu.org/api/ddnsapi.php
+  dns:
+   - 8.8.8.8    # Google 公共 DNS
+   - 1.1.1.1    # Cloudflare 公共 DNS
+  restart: always
