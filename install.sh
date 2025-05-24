@@ -26,7 +26,7 @@ if [ ! -f "$CONFIG_FILE" ]; then
     read -p "使用ipv4还是ipv6，请填写4或6（只要数字就行） " v46
     
     # 验证输入
-    if [ -z "$DOMAIN" ] || [ -z "$TOKEN" ]; then
+    if [ -z "$DOMAIN" ] || [ -z "$TOKEN" ]|| [ -z "$v46" ]; then
         echo "❌ 配置不完整，安装已取消。"
         exit 1
     fi
