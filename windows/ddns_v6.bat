@@ -35,7 +35,7 @@ if "%ip%"=="" (
     echo [!date! !time!] 使用IPv6地址: !ip!
     
     :: 发送DDNS更新请求（携带IPv6地址）
-    curl -s "http://9517.eu.org/api/ddnsapi.php?token=你的API令牌&domain=你的域名&ip=!ip!"
+    curl -s "https://9517.eu.org/api/ddnsapi.php?token=你的API令牌&domain=你的域名&ip=!ip!"
     
     echo 服务器响应已接收
 )
