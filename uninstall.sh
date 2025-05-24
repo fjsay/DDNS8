@@ -4,7 +4,7 @@ echo "⚠️ 正在卸载 DDNS 脚本..."
 
 # 删除已安装脚本
 sudo rm -f /usr/local/bin/ddns
-
+cd .. && rm -rf public-domain-ddns-script
 # 删除配置文件
 sudo rm -rf /etc/ddns/config.conf
 
