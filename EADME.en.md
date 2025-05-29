@@ -1,7 +1,7 @@
 
 # 🛰️ Public Domain DDNS Script  
 
-A lightweight, pure Shell DDNS (Dynamic Domain Name System) dynamic domain name update script specifically designed for the [YouDDNS](https://ddns8.cn/) platform. It requires no Python or other dependencies and is suitable for any Linux/Windows system.  
+A lightweight, pure Shell DDNS (Dynamic Domain Name System) dynamic domain name update script specifically designed for the [DDNS8](https://ddns8.cn/) platform. It requires no Python or other dependencies and is suitable for any Linux/Windows system.  
 
 
 ---  
@@ -19,7 +19,7 @@ curl -s "https://ddns8.cn/api/ddnsapi.php?token=Your API token&domain=Your domai
 ## ✅ One-Click Installation  
 
 ```bash  
-git clone https://github.com/fjsay/YouDDNS.git  
+git clone https://github.com/fjsay/DDNS8.git  
 cd YouDDNS  
 chmod +x install.sh  
 sudo ./install.sh  
