@@ -1,6 +1,6 @@
 # 🛰️ Public Domain DDNS Script
 
-一个轻量级、纯 Shell 的 DDNS 动态域名更新脚本，专为 [YouDDNS](https://ddns8.cn/) 平台设计，无需 Python 或其他依赖，适用于任意 Linux/Windows 系统。
+一个轻量级、纯 Shell 的 DDNS 动态域名更新脚本，专为 [DDNS吧](https://ddns8.cn/) 平台设计，无需 Python 或其他依赖，适用于任意 Linux/Windows 系统。
 
 
 ---
