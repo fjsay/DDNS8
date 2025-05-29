@@ -20,7 +20,7 @@ curl -s "https://ddns8.cn/api/ddnsapi.php?token=你的API令牌&domain=你的域
 ## ✅ 一键安装
 
 ```bash
-git clone https://github.com/fjsay/YouDDNS.git
+git clone https://github.com/fjsay/DDNS8.git
 cd YouDDNS
 chmod +x install.sh
 sudo ./install.sh
