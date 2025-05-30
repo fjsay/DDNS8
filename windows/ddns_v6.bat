@@ -40,6 +40,6 @@ if "%ip%"=="" (
     echo 服务器响应已接收
 )
 
-echo 更新完成！下一次更新将在5分钟后进行...
-timeout /t 300 /nobreak >nul
+echo 更新完成！下一次更新将在1分钟后进行...
+timeout /t 60 /nobreak >nul
 goto start
