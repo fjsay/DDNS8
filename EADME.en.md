@@ -20,7 +20,7 @@ curl -s "https://ddns8.cn/api/ddnsapi.php?token=Your API token&domain=Your domai
 
 ```bash  
 git clone https://github.com/fjsay/DDNS8.git  
-cd YouDDNS  
+cd DDNS8
 chmod +x install.sh  
 sudo ./install.sh  
 ```  
@@ -41,7 +41,8 @@ Modify the content with your own parameters:
 ```bash  
 DOMAIN=your-domain.com  
 TOKEN=your-api-token
-v46=the IP version you want to use (enter 4 or 6)  
+v46=the IP version you want to use (enter 4 or 6)
+API_URL=API_URL
 ```  
 
 These values are generated in your profile settings on the [YouDDNS platform](https://ddns8.cn/user/profile.php).  
@@ -79,7 +80,7 @@ Automatic updates are enabled by default during installation.
 To uninstall the DDNS script, use the following commands:  
 
 ```bash  
-cd YouDDNS  
+cd DDNS8
 chmod +x uninstall.sh  
 sudo ./uninstall.sh  
 ```  
