@@ -20,28 +20,37 @@ sudo chmod +x "$BIN_FILE"
 if [ ! -f "$CONFIG_FILE" ]; then
     echo "🛠️ 开始配置 DDNS..."
     
-    # 获取用户输入
+    # 获取用户输入（API链接增加默认值处理）
     read -p "请输入您的域名 (例如: example.com): " DOMAIN
     read -p "请输入您的 API 令牌: " TOKEN
-    read -p "使用ipv4还是ipv6，请填写4或6（只要数字就行） " v46
+    read -p "使用ipv4还是ipv6，请填写4或6（只要数字就行） ：" v46
+    read -p "API链接，直接回车默认使用 https://ddns8.cn/api/ddnsapi.php：" API_URL
     
-    # 验证输入
-    if [ -z "$DOMAIN" ] || [ -z "$TOKEN" ]|| [ -z "$v46" ]; then
+    # 处理API链接默认值（如果用户直接回车）
+    if [ -z "$API_URL" ]; then
+        API_URL="https://ddns8.cn/api/ddnsapi.php"
+        echo "🔌 已使用默认API链接: $API_URL"
+    fi
+    
+    # 验证输入（新增API_URL非空检查，默认值已处理，实际无需检查空，但保留逻辑完整性）
+    if [ -z "$DOMAIN" ] || [ -z "$TOKEN" ] || [ -z "$v46" ]; then
         echo "❌ 配置不完整，安装已取消。"
         exit 1
     fi
     
-    # 生成配置文件
-echo "# DDNS 配置文件" | sudo tee "$CONFIG_FILE" >/dev/null
-echo "# 域名" | sudo tee -a "$CONFIG_FILE" >/dev/null  # 使用 -a 追加而非覆盖
-echo "DOMAIN=$DOMAIN" | sudo tee -a "$CONFIG_FILE" >/dev/null
-echo "# API令牌" | sudo tee -a "$CONFIG_FILE" >/dev/null  # 使用 -a 追加而非覆盖
-echo "TOKEN=$TOKEN" | sudo tee -a "$CONFIG_FILE" >/dev/null
-echo "# v6v4？" | sudo tee -a "$CONFIG_FILE" >/dev/null  # 使用 -a 追加而非覆盖
-echo "v46=$v46" | sudo tee -a "$CONFIG_FILE" >/dev/null
+    # 生成配置文件（注意变量名大写，与主脚本一致）
+    echo "# DDNS 配置文件" | sudo tee "$CONFIG_FILE" >/dev/null
+    echo "# 域名" | sudo tee -a "$CONFIG_FILE" >/dev/null
+    echo "DOMAIN=$DOMAIN" | sudo tee -a "$CONFIG_FILE" >/dev/null
+    echo "# API令牌" | sudo tee -a "$CONFIG_FILE" >/dev/null
+    echo "TOKEN=$TOKEN" | sudo tee -a "$CONFIG_FILE" >/dev/null
+    echo "# IP版本（4/6）" | sudo tee -a "$CONFIG_FILE" >/dev/null
+    echo "V46_MODE=$v46" | sudo tee -a "$CONFIG_FILE" >/dev/null  # 主脚本要求变量名为V46_MODE（全大写）
+    echo "# API链接" | sudo tee -a "$CONFIG_FILE" >/dev/null
+    echo "API_URL=$API_URL" | sudo tee -a "$CONFIG_FILE" >/dev/null
     
-    # 设置安全权限
-    sudo chmod 777 "$CONFIG_FILE"
+    # 设置安全权限（建议配置文件权限为600，仅用户可读可写）
+    sudo chmod 600 "$CONFIG_FILE"  # 原777权限过高，存在安全风险
     
     echo "✅ 配置文件已创建: $CONFIG_FILE"
 else
