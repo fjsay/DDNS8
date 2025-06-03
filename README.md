@@ -21,7 +21,7 @@ curl -s "https://ddns8.cn/api/ddnsapi.php?token=你的API令牌&domain=你的域
 
 ```bash
 git clone https://github.com/fjsay/DDNS8.git
-cd YouDDNS
+cd DDNS8
 chmod +x install.sh
 sudo ./install.sh
 ```
@@ -42,6 +42,7 @@ sudo vim /etc/ddns/config.conf
 DOMAIN=你的域名
 TOKEN=API令牌
 v46=你要使用ipv4还是ipv6，填写数字即可
+API_URL=API链接
 ```
 
 这些值来自你在 https://ddns8.cn/user/profile.php 页面设置生成的参数。
@@ -71,7 +72,7 @@ ddns
 如果你不再使用 DDNS 功能，可以使用以下命令进行卸载：
 
 ```bash
-cd YouDDNS
+cd DDNS8
 chmod +x uninstall.sh
 sudo ./uninstall.sh
 ```
